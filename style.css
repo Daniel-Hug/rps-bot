@@ -1,0 +1,117 @@
+* {
+	color: #332F28;
+	box-sizing: border-box;
+}
+
+html, body, .col {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	background: #E6DEA5;
+	font-family: sans-serif;
+}
+
+.row-header {
+	display: flex;
+	height: 20vmin;
+	line-height: 20vmin;
+	overflow: hidden;
+}
+
+.heading {
+	flex: 1 auto;
+	margin: 0;
+	font-size: 7vmin;
+	text-align: center;
+}
+
+.col {
+	width: 33.333%;
+	float: left;
+	max-height: 80vmin;
+}
+
+.col-btns,
+.col-bot {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-around;
+	background: #597533;
+}
+
+.col-btns button,
+.bot-pick {
+	display: inline-block;
+	flex: 0 0 20%;
+	margin: 0 10%;
+	font-size: 6vmin;
+	border: 0;
+	border-radius: .5em;
+	background: #E6DEA5;
+}
+
+.col-btns button.active,
+.bot-pick.active {
+	background: #61B594;
+}
+
+.bot-pick {
+	text-align: center;
+	line-height: 2.68;
+	vertical-align: middle;
+}
+
+.col-btns button {
+	cursor: pointer;
+}
+
+.col-bot {
+	background: #C44E18;
+}
+
+.col-history {
+	padding: 1em 0;
+	background: #61B594;
+}
+
+.col-history > ol,
+#scoreboard,
+#msg,
+.start-msg {
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+.start-msg, #msg {
+	font-size: 3vw;
+}
+
+.start-msg {
+	margin-top: 0;
+}
+
+.start-msg .arrow {
+	display: block;
+	text-align: center;
+	font-size: 4em;
+	line-height: 1.5;
+	vertical-align: middle;
+}
+
+#scoreboard {
+	font-size: 2vw;
+}
+
+@media (max-width: 1150px) {
+	#scoreboard {
+		font-size: 1em;
+	}
+}
+
+@media (max-width: 600px) {
+	#msg {
+		font-size: 1.2em;
+	}
+}
