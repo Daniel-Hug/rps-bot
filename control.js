@@ -26,8 +26,8 @@ var _ = (function() {
 
 
 	_.getIndexOfNextBotPick = function() {
-		var indices = $.predictNext(app.history, app.gamesArr)[0];
-		return indices ? _.getTrumpIndex(app.history[indices[0]][indices[1]][0]) : $.randomInt(0, 2);
+		var next = $.predictNext(app.history, app.gamesArr)[0];
+		return next ? _.getTrumpIndex(next[0]) : $.randomInt(0, 2);
 	};
 
 

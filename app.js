@@ -43,13 +43,8 @@ var app = (function() {
 		button.textContent = pick;
 
 		button.addEventListener('click', function() {
-			// Let the bot pick:
 			var indexOfBotPick = _.getIndexOfNextBotPick();
-
-			// Determine the game outcome:
 			var indexOfOutcome = _.getOutcomeIndex(indexOfPick, indexOfBotPick);
-
-			// record game
 			_.recordGame(indexOfPick, indexOfBotPick, indexOfOutcome);
 
 			// update DOM:
