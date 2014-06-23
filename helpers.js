@@ -68,40 +68,6 @@ var $ = (function() {
 	};
 
 
-	$.arrayLastIndexOfArray = function(array, subArray) {
-		var delimitedIndex = array.join().lastIndexOf(subArray.join());
-		return delimitedIndex >= 0 ? delimitedIndex / (1 + subArray[0].length) : delimitedIndex;
-	};
-
-
-	// seq: array || string
-	// subseq: array || string
-
-	$.lastIndexOfSeq = function(seq, subseq) {
-		var i = seq.length,
-		subseqLen = subseq.length,
-		subseqLast = subseqLen - 1;
-		if (!i || !subseqLen || subseqLen > i) return -1;
-
-		// find the next occurance (right to left), in seq, of the last item in subseq:
-		// i = index in seq, less than i, of subseq's last item
-		while ((i = seq.lastIndexOf(subseq[subseqLast], i - 1)) >= 0) {
-			var first = i - subseqLast;
-			if (first < 0) return -1;
-			
-			// Loop through subseq items, in reverse, starting with second-to-last item:
-			// Make sure that values equivalent to the ones preceding the last item in subseq,
-			// appear in seq, preceding the found occurance, in sec, of subseq's last item.
-			for (var c = subseqLast; c-- && seq[first + c] === subseq[c];);
-
-			// if they do, return the index, in seq, of the first item in subseq:
-			if (c < 0) return first;
-		}
-
-		return i;
-	};
-
-
 	// seq: array || string
 	// subseq: array || string
 
